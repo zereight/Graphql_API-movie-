@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "gqlToTs": "graphql-to-typescript ./graphql/schema.graphql ./graphql/TSschema.d.ts",
     "start": "nodemon --exec ts-node index.ts -e ts,graphql"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "graphql-to-typescript": "^0.1.2",
     "graphql-yoga": "^1.16.2",
     "nodemon": "^1.18.4",
     "tslint-config-prettier": "^1.15.0",

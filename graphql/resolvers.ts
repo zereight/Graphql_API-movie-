@@ -1,7 +1,15 @@
 
+import {Person} from "./TSschema";
+
 const resolvers = {
     Query: {
-        name: () => "kim"
+        person: ():Person => {
+            return {
+                name: "Park",
+                gender: "female",
+                age: 25
+            };
+        }
     }
 };
 
