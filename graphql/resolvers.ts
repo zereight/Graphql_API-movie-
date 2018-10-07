@@ -1,14 +1,12 @@
 
 import {Person} from "./TSschema";
 
+import {persons} from "./database";
+
 const resolvers = {
     Query: {
-        person: ():Person => {
-            return {
-                name: "Park",
-                gender: "female",
-                age: 25
-            };
+        person: ():Person[] => {
+            return persons;
         }
     }
 };
