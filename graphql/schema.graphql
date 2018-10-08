@@ -10,5 +10,8 @@ type Query{
 }
 
 type Mutation {
-    findId(what_Id: String!): Person!
+    findId(what_Id: String!): Person! 
+    
+    addSomeMovie( name: String!, age: Int!, gender: String! ): Boolean
+    
 }

@@ -1,6 +1,6 @@
 import {Person} from "./TSschema";
 
-export const persons = [
+export var persons = [
   {
     id: "0",
     name: "Nicolas",
@@ -49,3 +49,17 @@ export const getById = (what_Id: string):Person => {
   const fillteredPerson = persons.filter( person => person.id === String(what_Id));
   return fillteredPerson[0];
 };
+
+export const addMovie = (_name, _age, _gender):void => {
+  const newMovie = {
+    id: String(persons.length ),
+    name: _name,
+    age: _age,
+    gender: _gender
+  };
+  
+  persons.push( newMovie );
+  
+  
+  
+}; // persons 를 const, let 으로 안두고 var한 이유 (함수에서 변하게하려고)
