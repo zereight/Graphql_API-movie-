@@ -1,8 +1,8 @@
-export const typeDefs = ["type Person {\n    id: String!\n    name: String!\n    gender: String!\n    age: Int!\n}\n\ntype Query{\n    person: Person!\n}"];
+export const typeDefs = ["type Person {\n    id: String!\n    name: String!\n    gender: String!\n    age: Int!\n}\n\ntype Query{\n    person: [Person]!\n}\n\ntype Mutation {\n    findId(what_Id: String!): Person!\n}"];
 /* tslint:disable */
 
 export interface Query {
-  person: Person;
+  person: Array<Person>;
 }
 
 export interface Person {
@@ -10,4 +10,12 @@ export interface Person {
   name: string;
   gender: string;
   age: number;
+}
+
+export interface Mutation {
+  findId: Person;
+}
+
+export interface FindIdMutationArgs {
+  what_Id: string;
 }

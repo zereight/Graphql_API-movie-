@@ -8,3 +8,7 @@ type Person {
 type Query{
     person: [Person]!
 }
+
+type Mutation {
+    findId(what_Id: String!): Person!
+}

@@ -1,3 +1,5 @@
+import {Person} from "./TSschema";
+
 export const persons = [
   {
     id: "0",
@@ -42,3 +44,8 @@ export const persons = [
     gender: "male"
   }
 ];
+
+export const getById = (what_Id: string):Person => {
+  const fillteredPerson = persons.filter( person => person.id === String(what_Id));
+  return fillteredPerson[0];
+};
