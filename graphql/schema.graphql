@@ -14,4 +14,5 @@ type Mutation {
     
     addSomeMovie( name: String!, age: Int!, gender: String! ): Boolean
     
+    deleteSomeMovieById( id: String! ) : Boolean
 }

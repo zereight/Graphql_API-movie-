@@ -52,7 +52,7 @@ export const getById = (what_Id: string):Person => {
 
 export const addMovie = (_name, _age, _gender):void => {
   const newMovie = {
-    id: String(persons.length ),
+    id: String(parseInt(persons [ persons.length - 1 ].id) + 1)  ,
     name: _name,
     age: _age,
     gender: _gender
@@ -63,3 +63,13 @@ export const addMovie = (_name, _age, _gender):void => {
   
   
 }; // persons 를 const, let 으로 안두고 var한 이유 (함수에서 변하게하려고)
+
+export const deleteMovieById = ( _id: string ):void => {
+  
+  try{
+    persons = persons.filter( human => human.id !== _id );
+  } catch (error){
+    console.log(error);
+  }
+  
+}

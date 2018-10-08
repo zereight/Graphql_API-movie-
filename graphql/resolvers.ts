@@ -1,7 +1,7 @@
 
-import {Person, FindIdMutationArgs, AddSomeMovieMutationArgs} from "./TSschema";
+import {Person, FindIdMutationArgs, AddSomeMovieMutationArgs, DeleteSomeMovieByIdMutationArgs} from "./TSschema";
 
-import {persons,  getById, addMovie} from "./database";
+import {persons,  getById, addMovie, deleteMovieById} from "./database";
 
 const resolvers = {
     Query: {
@@ -10,6 +10,7 @@ const resolvers = {
         }
     },
     Mutation: {
+        
         findId: (_, args: FindIdMutationArgs):Person => {
             return getById(args.what_Id);
         } ,
@@ -24,6 +25,15 @@ const resolvers = {
                 return false;
             }
             
+        } ,
+        
+        deleteSomeMovieById: (_, args: DeleteSomeMovieByIdMutationArgs):boolean => {
+            try{
+                deleteMovieById(args.id);
+                return true;
+            } catch(error){
+                return false;
+            }
         }
         
     }
